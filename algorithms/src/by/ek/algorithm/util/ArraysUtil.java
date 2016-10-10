@@ -25,4 +25,13 @@ public class ArraysUtil {
 		
 		return array;
 	}
+	
+	public static int[][] generateMatrix(int n, int m) {
+		int[][] result = new int[n][m];
+		for (int i = 0; i < n; i++) {
+			result[i] = generateRandomArray(m);
+		}
+		
+		return result;
+	}
 }
