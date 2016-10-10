@@ -5,6 +5,7 @@ import java.util.List;
 
 import by.ek.algorithm.matrix.MultiplyMatrix;
 import by.ek.algorithm.matrix.impl.BruteMatrixMultipler;
+import by.ek.algorithm.matrix.impl.SquareMatrixRecusiveMultiplier;
 import by.ek.algorithm.util.ArraysUtil;
 
 public class SquareMatrixMultiplyBenchmark {
@@ -12,7 +13,7 @@ public class SquareMatrixMultiplyBenchmark {
 	private List<MultiplyMatrix> matrixMultpliers;
 	
 	public SquareMatrixMultiplyBenchmark() {
-		matrixMultpliers = Arrays.asList(new BruteMatrixMultipler());
+		matrixMultpliers = Arrays.asList(new SquareMatrixRecusiveMultiplier(), new BruteMatrixMultipler());
 	}
 	
 	public void benchmark() {

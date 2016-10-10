@@ -7,11 +7,11 @@ import org.junit.Test;
 import by.ek.algorithm.subarraysearch.SubArraySearch;
 import by.ek.algorithm.subarraysearch.SubArraySearchResult;
 
-public abstract class FindMaxDiffSubArraySumTest {
+public abstract class BaseFindMaxDiffSubArraySumTest {
 
 	private final SubArraySearch search;
 	
-	public FindMaxDiffSubArraySumTest(SubArraySearch search) {
+	public BaseFindMaxDiffSubArraySumTest(SubArraySearch search) {
 		this.search = search;
 	}
 	

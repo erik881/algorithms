@@ -6,11 +6,11 @@ import org.junit.Test;
 
 import by.ek.algorithm.matrix.MultiplyMatrix;
 
-public abstract class SquareMatrixMultiplyTest {
+public abstract class BaseSquareMatrixMultiplyTest {
 
 	private final MultiplyMatrix matrixMultiplier;
 	
-	public SquareMatrixMultiplyTest(MultiplyMatrix matrixMultiplier) {
+	public BaseSquareMatrixMultiplyTest(MultiplyMatrix matrixMultiplier) {
 		this.matrixMultiplier = matrixMultiplier;
 	}
 	

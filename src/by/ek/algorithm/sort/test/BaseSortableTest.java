@@ -6,11 +6,11 @@ import org.junit.Test;
 
 import by.ek.algorithm.sort.Sortable;
 
-public abstract class SortableTest {
+public abstract class BaseSortableTest {
 
 	private Sortable sortable;
 	
-	public SortableTest(Sortable sortable) {
+	public BaseSortableTest(Sortable sortable) {
 		this.sortable = sortable;
 	}
 	
