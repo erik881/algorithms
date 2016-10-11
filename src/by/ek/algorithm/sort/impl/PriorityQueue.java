@@ -25,13 +25,26 @@ public class PriorityQueue {
 		return result;
 	}
 	
-	public int add(int value) {
+	public void add(int value) {
 		if (heapSize == array.length) {
 			array = Arrays.copyOf(array, array.length + (int) (heapSize * 0.75));
 		}
 		
 		heapSize++;
+		array[heapSize - 1] = Integer.MIN_VALUE;
+		increaseKey(heapSize - 1, value);
+	}
+	
+	private void increaseKey(int index, int newValue) {
+		if (newValue < array[index]) {
+			throw new IllegalArgumentException("cannot be less");
+		}
 		
+		array[index] = newValue;
+		while (index > 0 && array[parentIndex(index)] < newValue)  {
+			swap(array, index, parentIndex(index));
+			index = parentIndex(index);
+		}
 	}
 	
 	private void init() {
@@ -69,6 +82,10 @@ public class PriorityQueue {
 		return 2 * (index + 1);
 	}
 	
+	private int parentIndex(int index) {
+		return (index + 1) / 2 - 1;
+	}
+	
 	private void swap(int[] array, int from, int to) {
 		int tmp = array[from];
 		array[from] = array[to];
@@ -79,6 +96,19 @@ public class PriorityQueue {
 	public static void main(String[] args) {		
 		PriorityQueue queue = new PriorityQueue(new int[] { 16, 4, 10, 14, 7, 9, 3, 2, 8, 1 });
 		System.out.println(queue.peek());
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
+		queue.add(11);
+		queue.add(17);
+		queue.add(2);
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
+		System.out.println(queue.poll());
 		System.out.println(queue.poll());
 		System.out.println(queue.poll());
 		System.out.println(queue.poll());
