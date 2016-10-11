@@ -7,6 +7,7 @@ import by.ek.algorithm.sort.Sortable;
 import by.ek.algorithm.sort.impl.Heapsort;
 import by.ek.algorithm.sort.impl.InsertionSort;
 import by.ek.algorithm.sort.impl.MergeSort;
+import by.ek.algorithm.sort.impl.Quicksort;
 import by.ek.algorithm.util.ArraysUtil;
 
 public class SortBenchmarking {
@@ -14,7 +15,7 @@ public class SortBenchmarking {
 	private List<Sortable> sorters;
 	
 	public SortBenchmarking() {
-		sorters = Arrays.asList(new MergeSort(), new Heapsort(), new InsertionSort());
+		sorters = Arrays.asList(new MergeSort(), new Heapsort(), new InsertionSort(), new Quicksort());
 	}
 	
 	public void benchmark() {
